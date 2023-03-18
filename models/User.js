@@ -16,6 +16,14 @@ const UserSchema = new mongoose.Schema({
     date: {
       type: Date,
       default: Date.now
+    },
+    image:{
+      type:String,
+      required:'This field is required'
+     },
+    lists:{
+      following:[],
+      followers:[]
     }
   });
   

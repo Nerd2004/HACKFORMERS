@@ -1,9 +1,12 @@
 const express = require('express');
+const multer = require('multer');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+
 //Passport Config
 require('./config/passport')(passport);
 
@@ -18,7 +21,7 @@ const app = express();
 app.use(express.static('public'));
 
 //EJS
-app.use(expressLayouts);
+// app.use(expressLayouts);
 app.set('view engine','ejs');
 
 //Bodyparser
@@ -45,7 +48,8 @@ app.use(function(req, res, next) {
     res.locals.error = req.flash('error');
     next();
 });
-
+  
+app.use(fileUpload());
 //Routes
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));

@@ -25,7 +25,7 @@
   }
   .divforregisterpart .subscribe{
     position: absolute;
-      min-height: 30rem;
+      min-height: 36rem;
       height:auto;
       width: 22rem;
     padding: 20px;
@@ -126,6 +126,9 @@
   font-weight: 500;
   font-size:3vh;
   margin:1vh;
+}
+.imagediv{
+
 }
 .inputBox,
 .inputBox3,
