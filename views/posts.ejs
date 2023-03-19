@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+  <!-- ======= Styles ====== -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="assets/css/style2.scss" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <form action="/posts" enctype="multipart/form-data" method="post">
+        <div class="mb-3">
+            <label for="text" class="form-label">Textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="posttext"></textarea>
+        </div>
+        <label for="image">Post Image</label>
+            <input type="file" class="form-control" id="image" name="image" accept="image/*">
+        <input type= "submit" >
+    </form>
+    <div class="layout__main">
+        <% post.forEach(function(nova, index) { %>
+        <div class="tweet">
+            <a href="/profile/<%= nova.P_uploadedby%>">
+               <img class="tweet__author-logo" src="/uploads/<%- photos.get(nova.P_uploadedby) %>" />
+            </a>
+            <div class="tweet__main">
+              <div class="tweet__header">
+                <div class="tweet__author-name">
+                </div>
+                <div class="tweet__author-slug">
+                  @<%=names.get(nova.P_uploadedby)%>
+                </div>
+                <div class="tweet__publish-time">
+                  15h
+                </div>
+              </div>
+              <div class="tweet__content">
+                <%= nova.P_text %>
+                <% if(nova.P_img) { %>
+                <img class="tweet__image" src="/uploads/<%-nova.P_img %>" />
+                <% } else {%>
+                    <br>
+                    <% } %>
+                <button onclick=<% nova.P_likes = nova.P_likes +1 %>><%=nova.P_likes%></button>
+              </div>
+            </div>
+        </div>
+        <%})%>
+      </div>
+
+
+
+
+
+
+
+      <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main2.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+</body>
+</html>
+
+<!-- <div class="cardHeader">
+  <h2>Top posts</h2>
+  <a href="#" class="btn addbtn" 
+  data-toggle="modal"
+  data-target="#exampleModal"
+    ><i class="fa fa-plus fa-lg"></i
+  ></a>
+</div> -->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<!-- <div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Post your Updates
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><form action="#" method="post" enctype="multipart/form-data">
+        <div class="md-form amber-textarea active-amber-textarea">
+            <textarea id="form19" class="md-textarea form-control" rows="3" placeholder="Enter post test"></textarea>
+          </div>
+        <br>
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image">
+        <br>
+        <br>
+
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form></div>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="tweet">
+  <img
+    class="tweet__author-logo"
+    src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?b=1&s=170667a&w=0&k=20&c=MRMqc79PuLmQfxJ99fTfGqHL07EDHqHLWg0Tb4rPXQc="
+  />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">Chris Martin</div>
+      <div class="tweet__author-slug">@chris_martin</div>
+      <div class="tweet__publish-time">15h</div>
+    </div>
+    <div class="tweet__content">
+      One of my favorite things about the "ergonomics" of haskell is
+      being able to leave underscores in code that isn't finished
+      yet, and the type checker still works and provides useful
+      information about the incomplete code.
+      <img
+        class="tweet__image"
+        src="https://external-preview.redd.it/RW9qn1R0Edmuo_-OsRD6pKqfrrR60AjZuX7eMlP1ysc.jpg?auto=webp&s=0148516006ea93ca96366193258adf0f49445174"
+      />
+    </div>
+  </div>
+</div> -->

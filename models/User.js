@@ -21,10 +21,8 @@ const UserSchema = new mongoose.Schema({
       type:String,
       required:'This field is required'
      },
-    lists:{
-      following:[],
-      followers:[]
-    }
+     following:[String],
+    followers:[String]
   });
   
   const User = mongoose.model('User', UserSchema);

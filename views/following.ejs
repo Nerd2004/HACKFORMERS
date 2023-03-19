@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout {
+        display: grid;
+        grid-template-columns: 275px auto 350px;
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+      
+      .layout__right-sidebar {
+        position: fixed;
+        width: 350px;
+      }
+      .tweet {
+        display: flex;
+        border-bottom: 1px solid #e6ecf0;
+        margin-bottom: 2px;
+        padding: 10px 15px;
+      }
+      
+      .tweet:hover {
+        background: rgba(0, 0, 0, 0.03);
+        cursor: pointer;
+      }
+      
+      .tweet a {
+        color: #1b94e0;
+        text-decoration: none;
+      }
+      
+      .tweet a:hover {
+        text-decoration: underline;
+      }
+      
+      .tweet__author-logo {
+        width: 49px;
+        height: 49px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      
+      .tweet__header {
+        display: flex;
+      }
+      
+      .tweet__author-name {
+        font-size: 15px;
+        font-weight: 700;
+        color: #14171a;
+        margin-right: 5px;
+      }
+      
+      .tweet__author-slug {
+        color: #5b7083;
+        font-size: 15px;
+      }
+      
+      .tweet__publish-time {
+        margin-left: 5px;
+        color: #657786;
+      }
+      
+      .tweet__image {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 10px;
+      }
+      
+      </style>
+</head>
+<body>
+    <form action="/posts" enctype="multipart/form-data" method="post">
+        <div class="mb-3">
+            <label for="text" class="form-label">Textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="posttext"></textarea>
+        </div>
+        <label for="image">Following</label>
+            <input type="file" class="form-control" id="image" name="image" accept="image/*">
+        <input type= "submit" >
+    </form>
+    <div class="layout__main">
+        <% post.forEach(function(nova, index) { %>
+        <div class="tweet">
+            <a href="/profile/<%= nova.P_uploadedby%>">
+               <img class="tweet__author-logo" src="/uploads/<%- photos.get(nova.P_uploadedby) %>" />
+            </a>
+            <div class="tweet__main">
+              <div class="tweet__header">
+                <div class="tweet__author-name">
+                </div>
+                <div class="tweet__author-slug">
+                  @<%=names.get(nova.P_uploadedby)%>
+                </div>
+                <div class="tweet__publish-time">
+                  15h
+                </div>
+              </div>
+              <div class="tweet__content">
+                <%= nova.P_text %>
+                <% if(nova.P_img) { %>
+                <img class="tweet__image" src="/uploads/<%-nova.P_img %>" />
+                <% } else {%>
+                    <br>
+                    <% } %>
+                <button onclick=<% nova.P_likes = nova.P_likes +1 %>><%=nova.P_likes%></button>
+              </div>
+            </div>
+        </div>
+        <%})%>
+      </div>
+</body>
+</html>

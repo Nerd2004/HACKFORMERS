@@ -1,19 +1,11 @@
-<% if(user != null) { %>
-<div class="row">
-    <div class="col-12 col-md-4">
-        <img src="/uploads/<%- user.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- user.name %>" loading="lazy">
-    </div>
-
-    <div class="col-12 col-md-8">
-        <div class="row">
-        <div class="col-12"><h1><%- user.name %></h1></div>
-        <div class="col-12 mb-4"><i class="bi bi-tag"></i>HELLO</div>
-        <div class="col-12" style="white-space: pre-line;">
-            <h4>Cooking Instructions</h4>
-            <%- user.email %>
-        </div>
-    </div>
-</div>
+h1 class="mt-4">Profile</h1>
+<p class="lead mb-3">
+    <img class="tweet__author-logo" src="" />
+</p>
+<% if(owner.email != visiter.email){%>
+    <% if(ans === 0){ %> 
+<a href="/profile/<%= owner.email%>/follow" class="btn btn-secondary">Follow</a>
 <% } else { %>
-    <p>Unable to Register</p>
+    <a class="btn btn-secondary">Following</a>
+    <% } %>
 <% } %>
