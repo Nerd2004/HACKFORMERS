@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova</title>
+    
+    <link rel="stylesheet" href="/style2.css">
+    
+    <style>.contact-form {
+      
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .contact-form{
+      top:25%;
+      width: 50%;
+      margin-left: 25%;
+    }
+    .contact-form label {
+      color: black;
+    }
+    
+    .contact-form .heading {
+      font-size: 24px;
+      color: black;
+      ;
+      margin-bottom: 12px;
+      font-weight: bold;
+      display: block;
+    }
+    
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .contact-form label {
+      margin-bottom: 10px;
+    }
+    
+    textarea {
+      resize: none;
+      height: 80px;
+      width: 200px;
+    }
+    
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 5px #ff6384;
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .contact-form button[type="submit"] {
+      background-color: #ff6384;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    .contact-form button[type="submit"]:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }</style>
+    <!-- ======= Styles ====== -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+  </head>
+  <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container2">
+      <div class="navigation">
+        <ul>
+            <div class="topofnav">
+          <div>
+            <a href="#">
+              <span class="icon">
+                <img src="../../N.png" alt="" width="20px" />
+              </span>
+              <!-- <span class="title">Nova</span> -->
+            </a>
+        </div>
+        <div class="maintoggle">
+            <i class="maintoggle fa fa-bars fa-2x" name="menu-outline"></i>
+          </div>
+        </div>
+        <li>
+          <a href="/dashboard">
+            <span class="icon">
+              <ion-icon name="home-outline" href="/dashboard" ></ion-icon>
+            </span>
+            <span class="title">Home</span>
+          </a>
+        </li>
+
+        <li >
+          <a href="/profile">
+            <span class="icon">
+              <ion-icon name="people-outline"></ion-icon>
+            </span>
+            <span class="title">profile</span>
+          </a>
+        </li>
+        
+              
+        <li>
+          <a href="/post">
+            <span class="icon">
+              <ion-icon name="help-outline"></ion-icon>
+            </span>
+            <span class="title">Post</span>
+          </a>
+        </li>
+        
+        <!-- 
+              <li>
+                  <a href="#">
+                      <span class="icon">
+                          <ion-icon name="settings-outline"></ion-icon>
+                      </span>
+                      <span class="title">Settings</span>
+                  </a>
+              </li>
+
+              <li>
+                  <a href="#">
+                      <span class="icon">
+                          <ion-icon name="lock-closed-outline"></ion-icon>
+                      </span>
+                      <span class="title">Password</span>
+                  </a>
+              </li> -->
+
+        <li>
+          <a href="/users/logout">
+            <span class="icon">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </span>
+            <span class="title">Sign Out</span>
+          </a>
+        </li>
+        <li> 
+            <a href="#"class="hidethisshi">
+                      <span class="icon">
+                          <ion-icon name="chatbubble-outline"></ion-icon>
+                      </span>
+                      <span class="title">Messages</span>
+                  </a>
+              </li>
+              
+        </ul>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="toptopbar">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+
+          <div class="search-box">
+            <!-- <button class="btn-search"><i class="fa fa-search fa-white"></i></button> -->
+            <!-- <input
+              type="text"
+              class="input-search"
+              placeholder="  Type to Search..."
+            /> -->
+          </div>
+
+          <div class="user">
+            <img src="assets/imgs/customer01.jpg" alt="" />
+          </div>
+        </div>
+    </div>
+    <div class="contact-form">
+      <span class="heading">Contact Us</span>
+      <form action="/" method="post">
+        <div class="mb-3">
+            <label for="text" class="form-label">Textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="posttext"></textarea>
+        </div>
+        <label for="myfile">Select a file:</label>
+        <input class="form-control" type="file" id="exampleFormControlTextarea1" rows="3" name="postimage"></input>
+        <input type="submit" >
+    </form>
+    </form>
+    </div>
+    <!-- Modal -->
+
+    <!-- =========== Scripts =========  -->
+    <script src="./main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

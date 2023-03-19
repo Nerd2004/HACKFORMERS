@@ -127,9 +127,7 @@
   font-size:3vh;
   margin:1vh;
 }
-.imagediv{
 
-}
 .inputBox,
 .inputBox3,
 .inputBox4,
@@ -532,6 +530,7 @@ footer .bottom-details .bottom_text {
 .bottom-details .bottom_text a {
   margin-right: 10px;
 }
+
 @media (max-width: 900px) {
   footer .content .link-boxes {
     flex-wrap: wrap;
